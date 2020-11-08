@@ -17,7 +17,7 @@ client.on('message', (message) => {
 	const redirect = `${redirectUrl}${gameId}`;
 
 	const exampleEmbed = new Discord.MessageEmbed()
-		.setColor('0000FF')
+		.setColor('4b53f3')
 		.setTitle('Wololo')
 		.setURL(redirect)
 		.setDescription(`Join game: [${message.content}](${redirect})`)
