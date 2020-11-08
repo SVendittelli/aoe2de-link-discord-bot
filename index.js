@@ -1,4 +1,5 @@
-const { prefix, token } = require('./config.json');
+const { prefix, redirectUrl } = require('./config.json');
+const { token } = require('./token.json');
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
@@ -13,13 +14,15 @@ client.on('message', (message) => {
 	if (!gameId || isNaN(gameId)) {
 		return message.reply('you didn\'t provide a valid game ID!');
 	}
+	const redirect = `${redirectUrl}${gameId}`;
 
 	const exampleEmbed = new Discord.MessageEmbed()
+		.setColor('0000FF')
 		.setTitle('Wololo')
-		.setURL('http://localhost:8080')
-		// .setDescription(`Link pls [${message.content}](${message.content})`)
+		.setURL(redirect)
+		.setDescription(`Join game: [${message.content}](${redirect})`)
 		.setTimestamp()
-		.setFooter('Convert', 'https://static.wikia.nocookie.net/ageofempires/images/f/f5/Converticon_aoe2de.png/revision/latest?cb=20200421154852');
+		.setFooter('Converted', 'https://static.wikia.nocookie.net/ageofempires/images/f/f5/Converticon_aoe2de.png/revision/latest?cb=20200421154852');
 
 	message.channel.send(exampleEmbed);
 });

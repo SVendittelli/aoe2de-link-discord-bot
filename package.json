@@ -4,6 +4,7 @@
   "description": "A discord bot to turn Age of Empires II: Definitive Edition lobby links into clickable links in discord.",
   "main": "index.js",
   "scripts": {
+	"start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,7 @@
     "discord.js": "^12.4.1"
   },
   "devDependencies": {
-    "eslint": "^7.13.0"
+    "eslint": "^7.13.0",
+    "nodemon": "^2.0.6"
   }
 }

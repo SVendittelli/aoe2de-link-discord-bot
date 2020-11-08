@@ -1,4 +1,4 @@
 {
 	"prefix": "aoe2de://",
-	"token": "<insert token here>"
+	"redirectUrl": "http://localhost:4200/redirect?auto=true&id="
 }
