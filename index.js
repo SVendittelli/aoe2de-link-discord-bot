@@ -1,5 +1,5 @@
 const { prefix, redirectUrl } = require('./config.json');
-const { token } = require('./token.json');
+const { token } = process.env.DISCORD_TOKEN;
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
