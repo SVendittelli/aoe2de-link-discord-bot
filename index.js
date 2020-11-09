@@ -6,6 +6,9 @@ const client = new Discord.Client();
 
 client.once('ready', () => {
 	console.log('Ready!');
+	client.user.setActivity('Capture the Relic', { type: 'PLAYING' })
+		.then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+		.catch(console.error);
 });
 
 client.on('message', (message) => {
@@ -24,7 +27,9 @@ client.on('message', (message) => {
 		.setTimestamp()
 		.setFooter('Converted', 'https://static.wikia.nocookie.net/ageofempires/images/f/f5/Converticon_aoe2de.png/revision/latest?cb=20200421154852');
 
-	message.channel.send(exampleEmbed);
+	message.channel.send(exampleEmbed)
+		.then(console.log)
+		.catch(console.error);
 });
 
 client.login(token);
