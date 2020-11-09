@@ -1,4 +1,4 @@
 {
 	"prefix": "aoe2de://",
-	"redirectUrl": "http://localhost:4200/redirect?auto=true&id="
+	"redirectUrl": "https://aoe2delinkredirector.z33.web.core.windows.net/#/redirect?auto=true&id="
 }
