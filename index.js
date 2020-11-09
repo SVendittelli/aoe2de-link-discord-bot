@@ -5,10 +5,14 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.once('ready', () => {
-	console.log('Ready!');
+	console.log(`I am ready! Logged in as ${client.user.tag}!`);
+
 	client.user.setActivity('Capture the Relic', { type: 'PLAYING' })
-		.then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+		.then(presence => console.log(`Activity set to '${presence.activities[0].name}'`))
 		.catch(console.error);
+
+	client.generateInvite({ permissions: ['SEND_MESSAGES', 'MANAGE_MESSAGES', 'ADD_REACTIONS', 'EMBED_LINKS'] })
+		.then(link => console.log(`Generated bot invite link: ${link}`));
 });
 
 client.on('message', (message) => {
