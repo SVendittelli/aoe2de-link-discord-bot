@@ -18,7 +18,7 @@ client.once('ready', () => {
 client.on('message', (message) => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	const gameId = message.content.slice(prefix.length).trim();
-	if (!gameId || isNaN(gameId)) {
+	if (!gameId) {
 		return message.reply('you didn\'t provide a valid game ID!');
 	}
 	const redirect = `${redirectUrl}${gameId}`;
